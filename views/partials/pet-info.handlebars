@@ -1,49 +1,52 @@
 <div
-  class="uk-height-large rounded-lg uk-card uk-card-default uk-card-body text-indigo-50 bg-gradient-to-b from-indigo-500 to-blue-300 mx-3"
->
-<input value="{{id}}" class="get-id invisible"/>
-<div class="uk-transition-toggle" tabindex="0">
-            <img class="uk-position-center uk-preserve-width uk-responsive-height uk-object-scale-down" src="{{pic_filename}}" width="auto" height="auto" alt="">
-            <div class="uk-transition-slide-left uk-position-top uk-overlay uk-overlay-default rounded-lg">
-                <p class="uk-h4 uk-margin-remove">{{bio}}</p>
-            </div>
-        </div>
-  
+  class="uk-height-large rounded-lg uk-card uk-card-default uk-card-body text-indigo-50 bg-gradient-to-b from-indigo-500 to-blue-300 mx-3">
+  <input value="{{id}}" class="get-id invisible" />
+  <div class="uk-transition-toggle" tabindex="0">
+    <a href="/pet/{{id}}">
+      <img class="uk-position-center uk-preserve-width uk-responsive-height uk-object-scale-down" src="{{pic_filename}}"
+        width="auto" height="auto" alt="">
+    </a>
+      <div class="uk-transition-slide-left uk-position-top uk-overlay uk-overlay-default rounded-lg">
+        <p class="uk-h4 uk-margin-remove">{{bio}}</p>
+      </div>
+  </div>
+
   <div class="uk-position-bottom bg-indigo-700 px-8 pb-10 pt-4 rounded-b-lg">
     <div class="relative">
-        <div class="absolute">
-          <div class="flex items-center justify-between flex-wrap">
-            <div class="card-title"> 
-                <a href="/pet/{{id}}" class="font-semibold text-sky-500 hover:text-sky-400 hover:no-underline text-xl">
-                  {{user.username}}
-                </a>
-              <span class="px-1 text-indigo-400">|</span>
-              {{format_date created_at}}
-            </div>
+      <div class="absolute">
+        <div class="flex items-center justify-between flex-wrap">
+          <div class="card-title">
+            <a href="/pet/{{id}}" class="font-semibold text-sky-500 hover:text-sky-400 hover:no-underline text-xl">
+              {{user.username}}
+            </a>
+            <span class="px-1 text-indigo-400">|</span>
+            {{format_date created_at}}
           </div>
-          <div class="grid grid-cols-2 gap-x-2">
-              <div><span class="font-semibold text-blue-300">Name:
-                </span>{{pet_name}}</div>
-              <div><span class="font-semibold text-blue-300">Species:
-                </span>{{species}}</div>
-              <div><span class="font-semibold text-blue-300">Breed:
-                </span>{{breed}}</div>
-              <div><span class="font-semibold text-blue-300">Size:
-                </span>{{size}}</div>
-              <div><span class="font-semibold text-blue-300">Age: </span>{{age}}</div>
-          </div>
-    </div>
+        </div>
+        <div class="grid grid-cols-2 gap-x-2">
+          <div><span class="font-semibold text-blue-300">Name:
+            </span>{{pet_name}}</div>
+          <div><span class="font-semibold text-blue-300">Species:
+            </span>{{species}}</div>
+          <div><span class="font-semibold text-blue-300">Breed:
+            </span>{{breed}}</div>
+          <div><span class="font-semibold text-blue-300">Size:
+            </span>{{size}}</div>
+          <div><span class="font-semibold text-blue-300">Age: </span>{{age}}</div>
+        </div>
+      </div>
       <div class="flex justify-end">
-        <div class="uk-grid-divider uk-grid-column-small justify-center"uk-grid>
+        <div class="uk-grid-divider uk-grid-column-small justify-center" uk-grid>
           <div class="">
             <div class="pb-1">
-                <span id="fave-count" class="text-indigo-50 pr-2 text-xl py-1">{{fave_count}}</span><button id="{{id}}" class="addFave-btn-{{id}}"><i id="heart" class="fa-solid fa-heart text-3xl hover:text-indigo-200"></i></button>
+              <span id="fave-count" class="text-indigo-50 pr-2 text-xl py-1">{{fave_count}}</span><button id="{{id}}"
+                class="addFave-btn-{{id}}"><i id="heart"
+                  class="fa-solid fa-heart text-3xl hover:text-indigo-200"></i></button>
             </div>
             <div class="pt-1">
               {{!-- <span id="fave-count" class="text-indigo-50 pr-4 text-xl py-2"></span> --}}
-              <a
-                href="/pet/{{id}}"
-                class="hover:text-indigo-200 hover:no-underline" uk-icon="icon: comments; ratio: 1.5"></a>
+              <a href="/pet/{{id}}" class="hover:text-indigo-200 hover:no-underline"
+                uk-icon="icon: comments; ratio: 1.5"></a>
             </div>
           </div>
         </div>
